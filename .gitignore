@@ -1,0 +1,6 @@
+#Can ignore specific files
+Recipe/Recipe/local_settings.py*
+Recipe/*.pyc
+Recipe/chef/*.pyc
+Recipe/chef/*.swp
+Recipe/Recipe/*.pyc
