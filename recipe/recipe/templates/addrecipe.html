@@ -5,36 +5,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Aviyal:Add Your Recipe</title>
 <link rel="stylesheet" href="/static/css/home.css" >
+<link rel="stylesheet" href="/static/css/form.css" >
 
 </head>
 <body >
-<div id="wrapper">
-        {% block body %}
-                <ul>
-                {% if user.is_authenticated %}
-                <li><a href="{% url userena_signout %}">Sign Out</a></li>
-                {% else %}
-                <li><a href="{% url userena_signin %}">Sign In</a></li>
-                <li><a href="{% url userena_signup %}">Sign Up</a></li>
-                {% endif %}
-                </ul>
-
-	{% endblock %}
-	{% block content %}
-	{% if user.is_authenticated %}
-	<form method="post" action="">
-                {% csrf_token %}
+<p><h1> Share with us, you favorite recipe</h1></p>
+<div id="wrapper" class="addrec">
+	{% block body %}
+	<form method="post" action="{{ request.path }}">
+	{% csrf_token %}
                 <ul>
                         {{RecipeForm}}
                 </ul>
-                <input type="submit" value="Submit Form"/>
-                </form>
-	{% else %}
-	<ul>
-	<li><a href="{% url userena_signin %}">Sign In</a></li>
-        <li><a href="{% url userena_signup %}">Sign Up</a></li>
-	</ul>
-        {% endif %}
+                <input type="submit" value="Add Recipe"/>
+        </form>
 	{% endblock %}
 		
 </div>

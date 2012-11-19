@@ -183,10 +183,10 @@ AUTHENTICATION_BACKENDS = (
 
 )
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST ='smtp.zoho.com'
+EMAIL_HOST ='smtp.mail.yahoo.com'
 EMAIL_HOST_USER = 'abc@abc.com'
 EMAIL_HOST_PASSWORD ='somepassword'
-EMAIL_PORT =465
+EMAIL_PORT =587
 EMAIL_USE_TLS =True
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL=EMAIL_HOST_USER
