@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+Map that shows stats
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+
+<div id="map" class="map" >
+</div>
+<script type="text/javascript">
+	if (!navigator.geolocation) {  console.log('Get a better browser'); }
+
+		navigator.geolocation.getCurrentPosition(function(position) {
+    			console.log(position.coords.latitude + ", " + position.coords.longitude);
+			var lat = position.coords.latitude;
+			var longi = position.coords.longitude;
+			var map = L.map('map').setView([lat, longi], 13);
+
+                	L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+                        maxZoom: 20,
+                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+               		 }).addTo(map);
+                	//$.cookie("Lat", position.coords.latitude);
+                	//$.cookie("Longi", position.coords.longitude);
+                
+                	L.marker([lat, longi]).addTo(map)
+                        .bindPopup("<b>Hello world!</b><br />You are surfing form here.").openPopup();
+
+        	});
+
+
+	</script>
+{% endblock %}
+
+
+
+
+
