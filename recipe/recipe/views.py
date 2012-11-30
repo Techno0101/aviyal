@@ -19,16 +19,6 @@ def about(request):
     context = RequestContext(request, {})
     return render_to_response("about.html", context)
 
-
-def join_us(request):
-    context = RequestContext(request, {})
-    return render_to_response("innov/joinus.html", context)
-
-
-def contact(request):
-    context = RequestContext(request, {})
-    return render_to_response("innov/contactus.html", context)
-
 def showdata(request):
     context = RequestContext(request, {})
     return render_to_response("maplocation.html",context)
@@ -36,6 +26,7 @@ def showdata(request):
 def searchdata(request):
     context = RequestContext(request, {})
     return render_to_response("searchlocation.html",context)
+
 def contact(request):
     context = RequestContext(request, {})
     return render_to_response("contact.html", context)
