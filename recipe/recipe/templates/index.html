@@ -4,11 +4,15 @@ Home
 {% endblock %}
 	{%block content %}
 		<div id="main" class="main">
-			<p> <h2><Strong>So what are you cooking today?? Share with us.</strong></h2></p>
+			<p> <h2><Strong>So what are you eating today?</strong> </h2></p> 
 			<form id="Search">
-				<input placeholder="Search for recipes,ingredients and more" class="input-xlarge" type="text" style="height:42px" value="" name="main_search" id="m_search"/>
-				<button type="submit" class="btn btn-primary btn-large">Search</button>
+				<input class="input-xxlarge" type="text" style="height:40px" placeholder="e.g. Butter Chicken, Tandoori Roti"/>
+				<p><span6><button type="submit" class="btn btn-primary btn-large" style="float:center">Share</button></p>
 			</form>	
+			
 		</div>
+	
+		<div id="cook" class="cook">
+			<p><em><small><a href="{% url chef.views.recipe_posted %}">Are you cooking something awesome, share with us your recipe.</a></small></em></p>
 	{% endblock %}
 

@@ -12,7 +12,17 @@ from django import forms
 from chef.forms import RecipeForm
 @login_required
 def recipe_posted(request):
-	if request.user.is_authenticated():	
-		recipe = RecipeForm()
-		return render_to_response('addrecipe.html',{'RecipeForm':recipe})
+    if request.user.is_authenticated():	
+	if request.method == 'POST':
+	    recipe = RecipeForm(request.POST)
+	    if recipe.is_valid():
+	        new_recipe = recipe.save()
+	        #new_recipe.save()
+                return HttpResponseRedirect('.')
+	    else:
+	        recipe = RecipeForm()
+			
+	return render_to_response('addrecipe.html',
+				{'RecipeForm':recipe},
+				 context_instance=RequestContext(request))
 	

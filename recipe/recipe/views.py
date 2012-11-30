@@ -17,7 +17,7 @@ def home(request):
 
 def about(request):
     context = RequestContext(request, {})
-    return render_to_response("innov/about_chalobest.html", context)
+    return render_to_response("about.html", context)
 
 
 def join_us(request):
@@ -29,3 +29,13 @@ def contact(request):
     context = RequestContext(request, {})
     return render_to_response("innov/contactus.html", context)
 
+def showdata(request):
+    context = RequestContext(request, {})
+    return render_to_response("maplocation.html",context)
+
+def searchdata(request):
+    context = RequestContext(request, {})
+    return render_to_response("searchlocation.html",context)
+def contact(request):
+    context = RequestContext(request, {})
+    return render_to_response("contact.html", context)

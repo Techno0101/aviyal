@@ -6,7 +6,13 @@ Map that shows stats
 {% block content %}
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
 <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
-<div id="map" class="map" >
+<div id ="mapsearch" class="mapsearch">
+	<form id="mapsearchp">
+	<input placeholder="Search for places, popular foods and more" class="input-xxlarge search-query" style="height:42px" type="text"  id="mapsearchi"/>
+	<button type="submit" class="btn btn-primary btn-large">Go!</button>
+	</form>
+</div>
+<div id="searchmap" class="searchmap" >
 </div>
 <script type="text/javascript">
 	if (!navigator.geolocation) {  console.log('Get a better browser'); }
@@ -14,7 +20,8 @@ Map that shows stats
 		navigator.geolocation.getCurrentPosition(function(position) {
 			var lat = position.coords.latitude;
 			var longi = position.coords.longitude;
-			var map = L.map('map').setView([lat, longi], 13);
+			console.log(lat,longi);
+			var map = L.map('searchmap').setView([lat, longi], 13);
 
                 	L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
                         maxZoom: 20,

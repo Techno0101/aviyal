@@ -19,11 +19,8 @@ class RecipeForm(forms.ModelForm):
 	#	user_profile.save()
 	#	return new_user	
 	def save(self):
-		if request.method == 'POST':
-			form = RecipeForm(request.POST)
-			if form.is_valid():
-				dn, dd, co_t, cu_t, di, dm, p, c = RecipePoster.objects.get_create(**form.cleaned_data)
-			form.save()
-			return form
+		dn, dd, co_t, cu_t, di, dm, p, c = RecipePoster.objects.get_create(**form.cleaned_data)
+		form.save()
+		return form
 		
 		

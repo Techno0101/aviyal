@@ -30,17 +30,17 @@ body,html {
 #main {
 position: absolute;
     height: 300px;
-    width: 600px;
+    width: 800px;
     margin: -100px 0 0 -200px;
     top: 50%;
-    left: 50%;
+    left: 45%;
 }
 #map {
 position: absolute;
-    height: 600px;
-    width: 1250px;
+    height: 650px;
+    width: 1300px;
     margin: -10px 0 0 -10px;
-    top: 10%;
+    top: 8%;
     left: 1%;
 }
 #abouttext {
@@ -51,6 +51,33 @@ position: absolute;
     top: 10%;
     left: 1%;
 }
+#mapsearchp {
+	position: absolute;
+	left: 13%;
+	right: 20%;
+	top: 15%;
+	height: 42px;
+	max-width: none;
+	float: left;
+}
+#cook {
+        position: absolute;
+	top: 10%;
+	right: 1%;
+        float: right;
+}
+#searchmap {
+    position: absolute;
+    height: 500px;
+    margin: -90px 0 0 -90px;
+    top: 40%;
+    left: 20%;
+    right: 20%;
+}
+
+	
+	
+	
 
 
 </style>
@@ -71,14 +98,28 @@ position: absolute;
           <a class="brand" href="#">Aviyal</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="{% url recipe.views.home %}">Home</a></li>
+              <li><a href="{% url recipe.views.home %}">Home</a></li>
+	      <li> <a href="{% url recipe.views.showdata %}">Map</a></li>
+	      <li> <a href="{% url recipe.views.searchdata %}">Search</a></li>	
               <li> <a href="{% url recipe.views.about %}">About</a></li>
               <li><a href="{%url recipe.views.contact %}">Contact</a></li>
+	     </ul>
+	    <ul class="nav pull-right">
+	        {% if user.is_authenticated %}
+                <li><a href="{% url userena_signout %}">Sign Out</a></li>
+                {% else %}
+                <li><a href="{% url userena_signin %}">Sign In</a></li>
+	        <li class="divider-vertical"></li>
+                <li><a href="{% url userena_signup %}">Sign Up</a></li>
+		{% endif %}
             </ul>
+
           </div><!--/.nav-collapse -->
+         </div>
         </div>
       </div>
     </div>
+</div>
 {% block content %}
 {% endblock %}
 

@@ -165,6 +165,7 @@ INSTALLED_APPS = (
     'south',
     'django_extensions',
     'userena.contrib.umessages',
+    'crispy_forms',
 
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
