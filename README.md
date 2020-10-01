@@ -1,4 +1,4 @@
 aviyal
 ======
 
-A simple Webapp to share details on popular dishes of a place. Oh! and aviyal is a kerela delicacy. More details on this soon.
+A simple Webapp to share details on popular dishes of a place and their recipes. Oh! and aviyal is a Kerela delicacy. More details on this soon.
